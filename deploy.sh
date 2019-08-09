@@ -1,3 +1,10 @@
+### 
+# @Description: 
+ # @Author: linjy
+ # @Date: 2019-08-09 22:39:03
+ # @LastEditTime: 2019-08-09 22:44:38
+ # @LastEditors: linjy
+ ###
 #!/usr/bin/env sh
 
 # 确保脚本抛出遇到的错误
@@ -17,6 +24,6 @@ git commit -m '🎉deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:Jecyu/fe-auto-test.git master:gh-pages
+git push -f git@github.com:Jecyu/Fe-Auto-Testing.git master:gh-pages
 
 cd -

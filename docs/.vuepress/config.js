@@ -2,11 +2,11 @@
  * @Description: 
  * @Author: linjy
  * @Date: 2019-08-04 12:04:04
- * @LastEditTime: 2019-08-09 17:01:11
+ * @LastEditTime: 2019-08-09 22:42:15
  * @LastEditors: linjy
  */
 module.exports = {
-    base: '/fe-auto-testing/',
+    base: '/Fe-Auto-Testing/',
     dest: 'dist',
     title: '前端自动化测试',
     description: 'Analysis vue.js deeply',

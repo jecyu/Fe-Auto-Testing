@@ -1,5 +1,5 @@
 {
-  "name": "fe-auto-test",
+  "name": "Fe-Auto-Testing",
   "version": "1.0.0",
   "scripts": {
     "dev": "vuepress dev docs",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jecyu/fe-auto-test"
+    "url": "git+https://github.com/Jecyu/Fe-Auto-Testing"
   },
   "author": "Jecyu",
   "license": "MIT",

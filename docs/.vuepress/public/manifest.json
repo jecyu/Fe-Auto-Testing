@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/fe-auto-testing/",
+  "start_url": "/Fe-Auto-Testing/",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#3eaf7c"
