@@ -2,7 +2,7 @@
 # @Description: 
  # @Author: linjy
  # @Date: 2019-08-09 22:39:03
- # @LastEditTime: 2019-08-09 22:44:38
+ # @LastEditTime: 2019-08-09 22:52:12
  # @LastEditors: linjy
  ###
 #!/usr/bin/env sh
@@ -14,7 +14,8 @@ set -e
 yarn build
 
 # 进入生成的文件夹
-cd docs/.vuepress/dist
+# cd docs/.vuepress/dist
+cd dist
 
 git init
 git add -A
