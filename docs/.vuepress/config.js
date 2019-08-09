@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: linjy
  * @Date: 2019-08-04 12:04:04
- * @LastEditTime: 2019-08-09 22:42:15
+ * @LastEditTime: 2019-08-09 22:49:46
  * @LastEditors: linjy
  */
 module.exports = {
@@ -65,17 +65,10 @@ module.exports = {
                 ]
             },
             {
-                title: '如何落地',
-                collapsable: false,
-                children: [
-                    ['popularize/', 'Introduction'],
-                ]
-            },
-            {
                 title: '扩展',
                 collapsable: false,
                 children: [
-                    ['tdd/', 'Introduction'],
+                    ['popularize/', 'Introduction'],
                 ]
             },
             {
