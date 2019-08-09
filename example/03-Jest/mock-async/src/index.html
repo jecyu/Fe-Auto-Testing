@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS测试</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .control-panel {
+        width: 25rem;
+      }
+
+      .input-container {
+        margin: 1rem;
+      }
+
+      .input-container label,
+      .input-container input {
+        display: block;
+        width: 100%;
+      }
+
+      .input-container input {
+        font: inherit;
+      }
+
+      .button {
+        margin: 0 1rem;
+        border-radius: 3px;
+        border: 1px solid #70dbe9;
+        padding: 0.5rem 1rem;
+        font: inherit;
+        background: #70dbe9;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="control-panel">
+      <button id="getUserBtn" class="button">Get User</button>
+    </section>
+    <hr />
+    <section class="user-output">
+      <ul class="user-list"></ul>
+    </section>
+  </body>
+</html>

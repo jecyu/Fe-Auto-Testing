@@ -1,0 +1,5 @@
+src/components/**/__test__
+/public/
+/dist/
+/*.js
+/tests/

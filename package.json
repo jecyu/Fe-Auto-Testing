@@ -1,0 +1,35 @@
+{
+  "name": "fe-auto-test",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "push": "bash push.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jecyu/fe-auto-test"
+  },
+  "author": "Jecyu",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "test",
+    "unit"
+  ],
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.0",
+    "husky": "^1.0.0-rc.13",
+    "vuepress": "^0.14.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "bash deploy.sh"
+    }
+  }
+}

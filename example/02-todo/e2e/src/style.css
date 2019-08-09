@@ -1,0 +1,31 @@
+body {
+  font-family: sans-serif;
+}
+
+.control-panel {
+  width: 25rem;
+}
+
+.input-container {
+  margin: 1rem;
+}
+
+.input-container label,
+.input-container input {
+  display: block;
+  width: 100%;
+}
+
+.input-container input {
+  font: inherit;
+}
+
+.button {
+  margin: 0 1rem;
+  border-radius: 3px;
+  border: 1px solid #521751;
+  padding: 0.5rem 1rem;
+  font: inherit;
+  background: #521751;
+  color: #fff;
+}

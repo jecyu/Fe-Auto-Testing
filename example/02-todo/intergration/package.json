@@ -1,0 +1,28 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "scripts": {
+    "serve": "webpack-dev-server --hot --open --config build/webpack.dev.config.js",
+    "test": "jest",
+    "test:dev": "jest --watch"
+  },
+  "keywords": [
+    "js",
+    "test",
+    "jest"
+  ],
+  "author": "Jecyu",
+  "license": "MIT",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
+    "jest": "^24.8.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "3.0.7"
+  }
+}

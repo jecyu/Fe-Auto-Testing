@@ -1,0 +1,57 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.9.4/libexec/bin/yarn.js add htmp-webpack-plugin@3.0.7 --dev
+
+PATH: 
+  /Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  11.10.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.npmjs.org/htmp-webpack-plugin: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:64202:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:137468:22)
+      at Request.emit (events.js:197:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:138440:10)
+      at Request.emit (events.js:197:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:138362:12)
+      at Object.onceWrapper (events.js:285:13)
+      at IncomingMessage.emit (events.js:202:15)
+      at endReadableNT (_stream_readable.js:1129:12)
+      at processTicksAndRejections (internal/process/next_tick.js:76:17)
+
+npm manifest: 
+  {
+    "name": "todo",
+    "version": "1.0.0",
+    "scripts": {
+      "serve": "webpack-dev-server --hot --open --config build/webpack.dev.config.js"
+    },
+    "keywords": [
+      "js",
+      "test",
+      "jest"
+    ],
+    "author": "Jecyu",
+    "license": "MIT",
+    "devDependencies": {
+      "cross-env": "^5.2.0",
+      "css-loader": "^3.2.0",
+      "webpack": "^4.39.1",
+      "webpack-cli": "^3.3.6",
+      "webpack-dev-server": "^3.7.2",
+      "webpack-merge": "^4.2.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
