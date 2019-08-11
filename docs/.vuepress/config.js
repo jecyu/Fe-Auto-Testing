@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: linjy
  * @Date: 2019-08-04 12:04:04
- * @LastEditTime: 2019-08-09 22:49:46
+ * @LastEditTime: 2019-08-11 23:20:37
  * @LastEditors: linjy
  */
 module.exports = {
@@ -31,7 +31,7 @@ module.exports = {
         nav: [
             {
                 text: '配套例子',
-                link: 'https://coding.imooc.com/class/228.html'
+                link: 'https://github.com/Jecyu/Fe-Auto-Testing/tree/master'
             }
         ],
         sidebar: [

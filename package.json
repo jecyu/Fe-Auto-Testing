@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.0.0-alpha.0",
+    "commitizen": "^4.0.3",
     "husky": "^1.0.0-rc.13",
     "vuepress": "^0.14.1"
   },

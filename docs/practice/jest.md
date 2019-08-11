@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: linjy
  * @Date: 2019-08-05 16:41:32
- * @LastEditTime: 2019-08-09 16:43:06
+ * @LastEditTime: 2019-08-11 23:54:12
  * @LastEditors: linjy
  -->
 # Jest
@@ -10,6 +10,20 @@
 ## 环境搭建
 
 ```bash
+yarn add jest --dev
+```
+
+添加到 package.json 中
+```json
+{
+  "scripts": {
+    "test:unit": "jest"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
+
 ```
 
 ## Mock 使用
