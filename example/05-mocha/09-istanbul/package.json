@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "test": "mocha",
+    "cover": "istanbul cover -- ./node_modules/.bin/_mocha",
+    "coverage": "yarn cover && istanbul check-coverage --statement 90"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^6.2.0"
+  },
+  "dependencies": {},
+  "license": "MIT"
+}

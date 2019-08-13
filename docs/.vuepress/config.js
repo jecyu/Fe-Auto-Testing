@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: linjy
  * @Date: 2019-08-04 12:04:04
- * @LastEditTime: 2019-08-11 23:20:37
+ * @LastEditTime: 2019-08-13 09:44:11
  * @LastEditors: linjy
  */
 module.exports = {
@@ -81,6 +81,9 @@ module.exports = {
             {
                 title: '参考资料',
                 collapsable: false,
+                children: [
+                    ['refs/', 'Introduction'],
+                ]
             },
         ]
     }

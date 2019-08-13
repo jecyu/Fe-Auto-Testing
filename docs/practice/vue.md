@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 16:41:16
- * @LastEditTime: 2019-08-09 17:59:26
+ * @LastEditTime: 2019-08-13 09:47:28
  * @LastEditors: linjy
  -->
 # 测试 Vue.js 组件
@@ -348,3 +348,10 @@ describe("mutations", () => {
 ```
 
 详细看附带例子：example/04-vue
+
+## TDD
+
+## Snapshot Testing 快照测试
+
+-  Image Snapshot
+-  Storybook
