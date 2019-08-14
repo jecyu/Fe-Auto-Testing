@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-05 16:41:16
- * @LastEditTime: 2019-08-13 09:47:28
+ * @LastEditTime: 2019-08-14 14:19:00
  * @LastEditors: linjy
  -->
 # 测试 Vue.js 组件
@@ -286,7 +286,7 @@ describe('@event', () => {
           )
         }
       }
-      const wrapper = mount(DefaulButton); 
+      const wrapper = mount(DefaulButton, { sync: false }); 
       wrapper.trigger('click');
       wrapper.vm.$nextTick(() => {  // nextTick 确保回调已经完成
         expect(wrapper.find('.icon-loading').exists()).toBe(true)
@@ -355,3 +355,8 @@ describe("mutations", () => {
 
 -  Image Snapshot
 -  Storybook
+
+## E2E 测试
+
+- Cypress
+- Nightwatch
