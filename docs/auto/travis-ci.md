@@ -24,11 +24,17 @@ Travis CI 目前有两个网站，一个是 travis-ci.com，另一个是 travis-
 
 ## 持续集成
 
-我们先在 master 上切一个 develop 分支，再在 test 上切一个 featur/ci 分支。
+我们先在 master 上切一个 develop 分支，再在 test 上切一个 featur/ci（或者是个人分支） 分支，这里我以这个项目为例子。[daily](https://github.com/Jecyu/daily)
+```bash
+$ git branch
+* linjy
+  master
+  test
+```
 
-然后我们在工程的根目录下新建一个文件 .travis.yml，并复制下面的代码。
+然后我们在工程的根目录下新建一个文件 `.travis.yml`，并复制下面的代码。
 
-接着我们再用 Jest 写几个测试用例，注意如果项目中没有测试脚本而 .travis.yml 文件里面包含 yarn test，自动化 一定 报错。下面是展示例子
+接着我们再用 Jest 写几个测试用例，注意如果项目中没有测试脚本而 `.travis.yml` 文件里面包含 `yarn test`，自动化 一定 报错。下面是展示例子
 ```js
 module.exports = bu => {
   return new Promise((resolve, reject) => {
@@ -44,7 +50,7 @@ module.exports = bu => {
 ```
 
 然后我们在工程的根目录下新建一个文件 `.travis.yml`
-```yml
+```bash
 language: node_js
 node_js:
   - 11
@@ -61,36 +67,39 @@ scripts:
   - yarn build
 ```
 
-工程使用 Node.js 11.x，并且只在 `master` 分支有变动时触发 自动化部署（正常的提交、PR 都会正常走持续集成），接着将 node_modules 缓存起来（你懂的），最后安装依赖、跑测试脚本、在沙箱部署。
+工程使用 `Node.js 11.x`，并且只在 `master` 分支有变动时触发**自动化部署**（正常的提交、PR 都会正常走持续集成），接着将 `node_modules` 缓存起来（你懂的），最后安装依赖、跑测试脚本、在沙箱部署。
 
-这里：可以设置依赖包的资源，否则下载会比较慢。
+在这里我们可以设置依赖包的资源，否则下载会比较慢。
 
-交一下代码，并 pull request 到 test 分支。在此过程中我们触发了 push 和 PR，所以会跑两个 CI。待到两个都成功跑完后，我们就可以放心的合到`test`分支了。
+提交一下个人分支 `linjy`代码，并 `pull request` 到 `test` 分支。在此过程中我们触发了 `push` 和 `PR`，所以会跑两个 CI。待到两个都成功跑完后，我们就可以放心的合到`test`分支了。
 
 因此，理论上只要跑通这套流程，我们就可以放心的部署到真实环境了。
 
 <img :src="$withBase('/assets/travis-ci-github.png')">
 
 
-最后我们回到 Travis CI 的官网，可以看到一套完整的构建流程：安装依赖 -> 测试 -> 沙箱部署
+最后我们回到 Travis CI 的官网，打开 daily 项目下的 `job log`，可以看到一套完整的构建流程：
+
+安装依赖 -> 测试 -> 沙箱部署。
 
 <img :src="$withBase('/assets/travis-build-process.png')">
 
 ## 持续部署
 
-见：https://juejin.im/post/5c9b3934f265da60d429046d#comment
-
-## 走一遍正式的流程
-
-1. 我们先在 feature/ci 分支修改一段代码，提交分支，并 PR 到 develop，此时会运行两个 CI。当两个 CI 都跑通了，我们可以放心的 merge request 到 develop 分支。
-
-2. 接下来让 develop PR 到 master，此时会运行两个 CI（一个是 develop 分支，一个是测试合并到 master 的 CI）。当两个 CI 都跑通了，我们可以放心的 merge request 到 master 分支。
-
-3. merge request 之后会跑最后一个流程, 也就是自动部署，部署成功后线上代码就会更新了
-
 ## 加入徽章
 
+接下里，让我们给 README.md 添加上徽章，让它显得更加具有吸引力。
+在 Travis CI  对应的项目上，点击右边的头像即可以看到徽章的地址，把它 copy 到你的项目 `README.md` 文件中即可。
+
+<img :src="$withBase('/assets/travis-build-img.png')">
 <img :src="$withBase('/assets/travis-icon.png')">
 
 ## 总结
 
+让我们总结下 `travis ci` 一遍正式的流程:
+
+1. 我们先在 `feature/ci` 分支修改一段代码，提交分支，并 `PR` 到 `test`，此时会运行两个 CI。当两个 CI 都跑通了，我们可以放心的 `merge request` 到 `test` 分支。
+
+2. 接下来让 `test` PR 到 `master`，此时会运行两个 CI（一个是 develop 分支，一个是测试合并到 master 的 CI）。当两个 CI 都跑通了，我们可以放心的 `merge request` 到 `master` 分支。
+
+3. `merge request` 之后会跑最后一个流程, 也就是自动部署，部署成功后线上代码就会更新了。
