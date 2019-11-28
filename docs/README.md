@@ -28,7 +28,7 @@
 
 为了让新手更好地驾驭测试，从理论到实战，分为概念、实战、持续集成、扩展四个章节，如下图：
 
-![](../dist/assets/test-mind.png)
+![](.vuepress/public/assets/test-mind.png)
 
 **第一章：测试相关概念**
 
