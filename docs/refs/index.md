@@ -15,3 +15,10 @@
 - [用 Travis CI 打造大前端持续集成和自动化部署](https://juejin.im/post/5c9b3934f265da60d429046d#comment)
 
 ## 视频
+
+- [2017 Vueconf](https://www.youtube.com/watch?v=pqp0PsPBO_0)
+
+## 书籍
+
+- 《软件测试的艺术》
+- 《测试驱动开发》
