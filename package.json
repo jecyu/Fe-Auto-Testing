@@ -30,7 +30,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "bash deploy.sh"
+      "pre-push": "bash deploy.sh "
     }
   }
 }
