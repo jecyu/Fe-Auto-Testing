@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+      "target": "es5",
+      "strict": true,
+  },
+  "include": [
+      "src/**/*",
+      "tests/**/*"
+  ],
+  "exclude": [
+      "node_modules",
+  ]
+}

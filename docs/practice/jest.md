@@ -2,8 +2,8 @@
  * @Description: 
  * @Author: linjy
  * @Date: 2019-08-05 16:41:32
- * @LastEditTime: 2019-08-11 23:54:12
- * @LastEditors: linjy
+ * @LastEditTime : 2020-02-13 16:04:34
+ * @LastEditors  : linjy
  -->
 # Jest
 
@@ -192,3 +192,131 @@ describe('测试 pollAction轮询类', () => {
 待完成描述部分。建议直接去看附带的 demo，example/04-jest/mock-async 部分。
 
 
+## 添加 TypeScript 支持
+
+[TypeScript](http://www.typescriptlang.org/) 是 JavaScript 的一个超集，主要提供了类型系统和对ES6 的支持，它由 Microsoft 开发，[代码开源于 Github 上](https://github.com/Microsoft/TypeScript)。
+
+example/03-Jest/typeScript 目录
+```bash
+|--src
+|--|--utils
+|--|--|__math.ts
+|--tests
+|  |__math.spec.ts
+```
+
+1. 安装包 `yarn add typescript --dev`，然后把 `.js` 改为 `.ts` 扩展名，并根据 TypeScript 语法编写逻辑代码。
+
+Before
+```js
+// math.js
+export const sum = function(a, b) {
+  // 类型判断
+  if (Object.prototype.toString.call(a) !== '[object Number]' || Object.prototype.toString.call(b) !== '[object Number]') {
+    return null;
+  }
+  return a + b;
+};
+
+export const mul = (a, b) => a * b;
+export const sub = (a, b) => a - b;
+export const div = (a, b) => a / b;
+```
+
+```js
+// math.spec.js
+import { sum } from '../utils/math';
+describe('test math function', () => {
+  it('Adding 1 + 1 equals 2', () => {
+    expect(sum(1,1)).toBe(2)
+  })
+})
+```
+
+After 
+```ts
+// math.ts //  TypeScript => 是用来定义函数的，函数左边是似乎如类型
+ export const sum: (a: number, b: number) => number =  function(a: number, b: number): number {
+    return a + b;
+  };
+  export const mul: (a: number, b: number) => number =  function(a: number, b: number): number {
+    return a + b;
+  };
+  export const sub: (a: number, b: number) => number =  function(a: number, b: number): number {
+    return a + b;
+  };
+  export const div: (a: number, b: number) => number =  function(a: number, b: number): number {
+    return a + b;
+  };
+```
+
+```ts
+// math.spec.ts
+import { sum } from '../src/utils/math';
+describe('test math function', () => {
+  it('Adding 1 + 1 equals 2', () => {
+    expect(sum(1,1)).toBe(2)
+  })
+})
+```
+
+2. 在与 `package.json` 同目录下新增 `tsconfig.json`，添加 TypeScript 配置。
+```js
+{
+  "compilerOptions": {
+      "target": "es5",
+      "strict": true,
+  },
+  "include": [
+      "src/**/*",
+      "tests/**/*"
+  ],
+  "exclude": [
+      "node_modules",
+  ]
+}
+```
+
+这个时候使用 ` tsc src/utils/math.ts` 可以成功对 ts 文件进行编译。
+
+3. 使用 Jest 测试 TypeScript 代码需要借助 `ts-jest` 解析器，而且需要 `@type/jest` 类型声明，避免找不到如 `describe` 模块。注意的是，如果在上述文件 `tsconfig.json` 中声明了 `types` 字段且不为空，这时候需要把 `jest` 字段添加进 `types` 里，这个设置是告诉 TypeScript 从 `@type` 包中寻找哪些声明文件。
+
+所以需要安装依赖：
+`yarn add ts-jest @types/jest --dev`
+
+然后修改 `jest.config.js` 配置文件，将 ts 文件解析器设置为 `ts-jest`。
+
+```js
+// jest.config.js
+module.exports = {
+  collectCoverage: true,
+  transform: {
+      '^.+\\.tsx?$': 'ts-jest',
+  }
+}
+```
+
+另外，在 `package.json` 添加 scripts 测试命令。
+```json
+{
+  "name": "typeScript",
+  "version": "1.0.0",
+  "description": "jest + ts",
+  "main": "index.js",
+  "author": "Jecyu",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {}
+}
+
+```
+
+最后，运行 `yarn test` 即可测试 TypeScript 代码。
