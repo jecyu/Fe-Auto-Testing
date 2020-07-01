@@ -1,10 +1,3 @@
-<!--
- * @Description: In User Settings Edit
- * @Author: your name
- * @Date: 2019-08-05 16:41:16
- * @LastEditTime: 2019-08-14 14:19:00
- * @LastEditors: linjy
- -->
 # 测试 Vue.js 组件
 
 与处理浏览器中的`require`同理, 如果我们需要对 .vue 文件进行测试, 则需要通过`vue-loader`的对.vue 文件进行处理。

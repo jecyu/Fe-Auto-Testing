@@ -1,10 +1,3 @@
-<!--
- * @Description: 
- * @Author: linjy
- * @Date: 2019-08-07 13:42:27
- * @LastEditTime: 2019-08-09 16:20:42
- * @LastEditors: linjy
- -->
 # 为什么要测试
 
 为什么要测试呢？测试是为了及时发现错误，保证系统程序的正常运行。
