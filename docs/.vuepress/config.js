@@ -2,8 +2,8 @@
  * @Description: 
  * @Author: linjy
  * @Date: 2019-08-04 12:04:04
- * @LastEditTime: 2019-08-13 09:44:11
- * @LastEditors: linjy
+ * @LastEditTime: 2020-07-01 17:56:16
+ * @LastEditors: Jecyu
  */
 module.exports = {
     base: '/Fe-Auto-Testing/',
@@ -23,7 +23,7 @@ module.exports = {
     ],
     serviceWorker: false,
     themeConfig: {
-        repo: 'Jecyu/fe-auto-test',
+        repo: 'Jecyu/Fe-Auto-Test',
         editLinks: true,
         docsDir: 'docs',
         editLinkText: '在 GitHub 上编辑此页',
