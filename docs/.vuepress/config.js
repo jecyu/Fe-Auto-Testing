@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: linjy
  * @Date: 2019-08-04 12:04:04
- * @LastEditTime: 2020-07-01 17:56:16
+ * @LastEditTime: 2020-07-01 20:32:18
  * @LastEditors: Jecyu
  */
 module.exports = {
@@ -23,7 +23,7 @@ module.exports = {
     ],
     serviceWorker: false,
     themeConfig: {
-        repo: 'Jecyu/Fe-Auto-Test',
+        repo: 'Jecyu/Fe-Auto-Testing',
         editLinks: true,
         docsDir: 'docs',
         editLinkText: '在 GitHub 上编辑此页',
