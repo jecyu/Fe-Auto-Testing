@@ -196,11 +196,11 @@ describe("测试 pollAction轮询类", () => {
 example/03-Jest/typeScript 目录
 
 ```bash
-|--src
-|--|--utils
-|--|--|__math.ts
-|--tests
-|  |__math.spec.ts
+| --src   |
+| ------- |
+| --      |--|__math.ts
+| --tests |
+|         |__math.spec.ts
 ```
 
 1. 安装包 `yarn add typescript --dev`，然后把 `.js` 改为 `.ts` 扩展名，并根据 TypeScript 语法编写逻辑代码。
@@ -209,7 +209,7 @@ Before
 
 ```js
 // math.js
-export const sum = function(a, b) {
+export const sum = function (a, b) {
   // 类型判断
   if (
     Object.prototype.toString.call(a) !== "[object Number]" ||
@@ -239,25 +239,25 @@ After
 
 ```ts
 // math.ts //  TypeScript => 是用来定义函数的，函数左边是似乎如类型
-export const sum: (a: number, b: number) => number = function(
+export const sum: (a: number, b: number) => number = function (
   a: number,
   b: number
 ): number {
   return a + b;
 };
-export const mul: (a: number, b: number) => number = function(
+export const mul: (a: number, b: number) => number = function (
   a: number,
   b: number
 ): number {
   return a + b;
 };
-export const sub: (a: number, b: number) => number = function(
+export const sub: (a: number, b: number) => number = function (
   a: number,
   b: number
 ): number {
   return a + b;
 };
-export const div: (a: number, b: number) => number = function(
+export const div: (a: number, b: number) => number = function (
   a: number,
   b: number
 ): number {
@@ -341,14 +341,20 @@ module.exports = {
 
 除了上面在项目中安装依赖包测试外，我们还可以安装 Jest 插件，先写好测试用例，然后一边实现一边查看测试的结果：
 
-![](../.vuepress/public/assets/2020-08-27-21-44-46-test.png)
+具体步骤：
+1. 在 VSCode 中 “Jest” 插件并安装
+2. 新建一个测试用例文件 `xxx.test.js`，不能是 js 后缀文件，否则插件不能识别。
+3. 然后编写测试由用例。
 
+![](../.vuepress/public/assets/2020-08-27-21-44-46-test.png)
 
 这样基本可以解决一些比较简单的测试用例，方便快捷，也不用安装依赖包。
 
 ![](../.vuepress/public/assets/2020-08-27-21-47-00-jest.png)
 
 双窗口开发查看。
+
+
 
 ## 在 VSCode 中调试 Jest
 
@@ -435,10 +441,10 @@ npm install --save-dev babel-jest @babel/core @babel/preset-env
 module.exports = {
   presets: [
     [
-      '@babel/preset-env',
+      "@babel/preset-env",
       {
         targets: {
-          node: 'current',
+          node: "current",
         },
       },
     ],
@@ -448,3 +454,47 @@ module.exports = {
 
 3. 确保在 `package.json` and `jest.config.js` 中 Jest 是默认配置。
 4. Jest 会默认读取 babel 的配置，通过 base-jest 对 ES Module 的代码进行转换为 CommonJS。
+
+## 对 DOM 进行测试
+
+jest 单元测试具有 dom 的页面，使用原生 HTML（比如 Vue） or 使用 JSDOM。
+
+https://www.npmjs.com/package/jsdom
+
+## 异常测试
+
+源代码：
+```js
+/**
+ * Multiplies a value by 2.
+ * @param value
+ * @returns
+ * @anotherNote
+ */
+function double(value: number) {
+  if (value <= Number.MIN_VALUE || value >= Number.MAX_VALUE) {
+    throw new Error('The number is out of range that can be represented.')
+  } else {
+    return value * 2
+  }
+}
+export default double
+```
+
+使用 `toThrow` 获得错误输出的信息。
+
+```js
+import double from '../src/double'
+describe('double', () => {
+  it('should error if get number in the valid range.', () => {
+    expect(() => {
+      double(Number.MAX_VALUE)
+    }).toThrow('The number is out of range that can be represented.')
+  })
+
+  it('should input a number and get it doubled', () => {
+    expect(double(2)).toBe(4)
+  })
+})
+
+```
